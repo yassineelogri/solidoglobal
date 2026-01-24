@@ -40,7 +40,8 @@
   <header class="header" id="top">
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Solido Global home">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <!-- ✅ Logo instead of brand-mark -->
+        <img class="brand-logo" src="assets/img/logo.png" alt="Solido Global logo" />
         <span class="brand-text">
           <strong>Solido</strong><span>Global</span>
         </span>
@@ -118,7 +119,6 @@
       </div>
 
       <div class="hero-right">
-        <!-- “Premium” hero panel -->
         <div class="hero-panel">
           <div class="panel-header">
             <div class="panel-title">RFQ Quick Start</div>
@@ -127,13 +127,24 @@
 
           <div class="panel-section" id="selector">
             <div class="chips" role="tablist" aria-label="Installation area selector">
-              <button class="chip is-active" data-filter="road" role="tab" aria-selected="true">Roadway</button>
-              <button class="chip" data-filter="sidewalk" role="tab" aria-selected="false">Sidewalk</button>
-              <button class="chip" data-filter="industrial" role="tab" aria-selected="false">Industrial</button>
+              <!-- ✅ Icons added to chips -->
+              <button class="chip is-active" data-filter="road" role="tab" aria-selected="true">
+                <img class="chip-icon" src="assets/icons/roadway.png" alt="" aria-hidden="true" />
+                Roadway
+              </button>
+
+              <button class="chip" data-filter="sidewalk" role="tab" aria-selected="false">
+                <img class="chip-icon" src="assets/icons/sidewalk.png" alt="" aria-hidden="true" />
+                Sidewalk
+              </button>
+
+              <button class="chip" data-filter="industrial" role="tab" aria-selected="false">
+                <img class="chip-icon" src="assets/icons/industry.png" alt="" aria-hidden="true" />
+                Industrial
+              </button>
             </div>
 
             <div class="panel-results" id="selectorResults" aria-live="polite">
-              <!-- Filled by JS -->
               <div class="result">
                 <div class="result-name">Heavy-duty covers</div>
                 <div class="result-meta">Recommended: C250 / D400</div>
@@ -177,7 +188,6 @@
           </div>
         </div>
 
-        <!-- floating feature cards -->
         <div class="float-stack" aria-hidden="true">
           <div class="float-card">
             <div class="float-title">Procurement-friendly</div>
@@ -204,9 +214,10 @@
         </div>
 
         <div class="grid cards reveal">
+          <!-- ✅ Icons for each product card -->
           <article class="card">
             <div class="card-top">
-              <div class="icon" aria-hidden="true"></div>
+              <img class="card-icon" src="assets/icons/roadway.png" alt="" aria-hidden="true" />
               <h3>Round Manhole Covers</h3>
             </div>
             <p>Stable seating for road and utility access with optional silent / anti-noise systems.</p>
@@ -219,7 +230,7 @@
 
           <article class="card">
             <div class="card-top">
-              <div class="icon" aria-hidden="true"></div>
+              <img class="card-icon" src="assets/icons/industry.png" alt="" aria-hidden="true" />
               <h3>Square & Rectangular</h3>
             </div>
             <p>Telecom, electrical, and chamber access formats engineered for fit and service.</p>
@@ -232,7 +243,7 @@
 
           <article class="card">
             <div class="card-top">
-              <div class="icon" aria-hidden="true"></div>
+              <img class="card-icon" src="assets/icons/sidewalk.png" alt="" aria-hidden="true" />
               <h3>Drainage Gratings</h3>
             </div>
             <p>Gratings and drainage solutions built for water flow, safety, and long service life.</p>
@@ -245,7 +256,7 @@
 
           <article class="card">
             <div class="card-top">
-              <div class="icon" aria-hidden="true"></div>
+              <img class="card-icon" src="assets/icons/customization.png" alt="" aria-hidden="true" />
               <h3>Custom Engineering</h3>
             </div>
             <p>Send your BOQ/spec and we propose the right load class, size, and finish.</p>
@@ -309,9 +320,10 @@
           </p>
         </div>
 
+        <!-- ✅ Real images -->
         <div class="grid three reveal">
           <div class="case">
-            <div class="case-img"></div>
+            <div class="case-img case1"></div>
             <div class="case-body">
               <div class="case-title">Municipal roadway upgrade</div>
               <div class="case-meta">Load class: D400 • Silent seating option</div>
@@ -319,7 +331,7 @@
           </div>
 
           <div class="case">
-            <div class="case-img"></div>
+            <div class="case-img case2"></div>
             <div class="case-body">
               <div class="case-title">Utility access network</div>
               <div class="case-meta">Square frames • Custom logo branding</div>
@@ -327,7 +339,7 @@
           </div>
 
           <div class="case">
-            <div class="case-img"></div>
+            <div class="case-img case3"></div>
             <div class="case-body">
               <div class="case-title">Drainage improvement</div>
               <div class="case-meta">Gratings • Corrosion-resistant option</div>
@@ -438,7 +450,8 @@
     <div class="container footer-inner">
       <div class="footer-left">
         <div class="brand mini">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <!-- ✅ Footer logo -->
+          <img class="brand-logo mini" src="assets/img/logo.png" alt="Solido Global logo" />
           <span class="brand-text"><strong>Solido</strong><span>Global</span></span>
         </div>
         <div class="tiny muted">© <span id="year"></span> Solido Global. All rights reserved.</div>
@@ -453,8 +466,6 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
-
