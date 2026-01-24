@@ -1,1 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solido Global — Manhole Covers & Drainage Solutions</title>
+  <meta name="description" content="Solido Global manufactures infrastructure-grade manhole covers and drainage solutions. Built for compliance, safety, and reliable delivery." />
+
+  <!-- Open Graph (for sharing) -->
+  <meta property="og:title" content="Solido Global — Manhole Covers & Drainage Solutions" />
+  <meta property="og:description" content="Infrastructure-grade access covers and drainage solutions. Compliance, quality, and reliable delivery." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Top announcement / utility bar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span class="dot"></span>
+        <span class="topbar-text">Infrastructure-grade manufacturing • RFQ response within 24–48h</span>
+      </div>
+      <div class="topbar-right">
+        <a class="topbar-link" href="#quote">Request a Quote</a>
+        <span class="sep">•</span>
+        <a class="topbar-link" href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="header" id="top">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Solido Global home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <strong>Solido</strong><span>Global</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#products">Products</a>
+        <a href="#selector">Selector</a>
+        <a href="#quality">Quality</a>
+        <a href="#projects">Projects</a>
+        <a href="#factory">Factory</a>
+        <a class="btn btn-ghost" href="#quote">Request a Quote</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Hero -->
+    <div class="container hero">
+      <div class="hero-left">
+        <div class="badge">
+          <span class="badge-icon" aria-hidden="true"></span>
+          <span>Built for procurement & engineers</span>
+        </div>
+
+        <h1 class="hero-title">
+          Manhole covers & drainage solutions<br />
+          engineered for real infrastructure.
+        </h1>
+
+        <p class="hero-lead">
+          Solido Global manufactures durable access covers for roads, sidewalks, and industrial zones —
+          with clear specifications, compliance-first quality, and export-ready delivery.
+        </p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#quote">Request a Quote</a>
+          <a class="btn btn-secondary" href="#products">Explore Products</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-card">
+            <div class="trust-kicker">Standards</div>
+            <div class="trust-value">EN 124 load classes</div>
+            <div class="trust-meta">A15 → F900 selection support</div>
+          </div>
+          <div class="trust-card">
+            <div class="trust-kicker">Customization</div>
+            <div class="trust-value">OEM / branding</div>
+            <div class="trust-meta">Logo, dimensions, finishing</div>
+          </div>
+          <div class="trust-card">
+            <div class="trust-kicker">Delivery</div>
+            <div class="trust-value">Export-ready</div>
+            <div class="trust-meta">Docs, packaging, logistics</div>
+          </div>
+        </div>
+
+        <div class="hero-proof">
+          <div class="proof-item">
+            <div class="proof-num">10+</div>
+            <div class="proof-label">Product variants</div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-num">24–48h</div>
+            <div class="proof-label">RFQ response</div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-num">Global</div>
+            <div class="proof-label">Export capability</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- “Premium” hero panel -->
+        <div class="hero-panel">
+          <div class="panel-header">
+            <div class="panel-title">RFQ Quick Start</div>
+            <div class="panel-sub">Pick your area and get recommendations</div>
+          </div>
+
+          <div class="panel-section" id="selector">
+            <div class="chips" role="tablist" aria-label="Installation area selector">
+              <button class="chip is-active" data-filter="road" role="tab" aria-selected="true">Roadway</button>
+              <button class="chip" data-filter="sidewalk" role="tab" aria-selected="false">Sidewalk</button>
+              <button class="chip" data-filter="industrial" role="tab" aria-selected="false">Industrial</button>
+            </div>
+
+            <div class="panel-results" id="selectorResults" aria-live="polite">
+              <!-- Filled by JS -->
+              <div class="result">
+                <div class="result-name">Heavy-duty covers</div>
+                <div class="result-meta">Recommended: C250 / D400</div>
+              </div>
+              <div class="result">
+                <div class="result-name">Anti-noise seats</div>
+                <div class="result-meta">Optional gasket / silent seating</div>
+              </div>
+              <div class="result">
+                <div class="result-name">Drainage options</div>
+                <div class="result-meta">Gratings & channel solutions</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-divider"></div>
+
+          <div class="panel-section">
+            <div class="mini-grid">
+              <div class="mini-card">
+                <div class="mini-kicker">Documents</div>
+                <div class="mini-text">Datasheets & drawings</div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-kicker">Surface</div>
+                <div class="mini-text">Anti-slip finishing</div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-kicker">Security</div>
+                <div class="mini-text">Optional locking</div>
+              </div>
+              <div class="mini-card">
+                <div class="mini-kicker">Support</div>
+                <div class="mini-text">Selection guidance</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <a class="btn btn-ghost w-full" href="#products">See all product categories</a>
+          </div>
+        </div>
+
+        <!-- floating feature cards -->
+        <div class="float-stack" aria-hidden="true">
+          <div class="float-card">
+            <div class="float-title">Procurement-friendly</div>
+            <div class="float-text">Clear specs and fast quoting.</div>
+          </div>
+          <div class="float-card">
+            <div class="float-title">Built for compliance</div>
+            <div class="float-text">Load-class selection support.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Products -->
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Products</h2>
+          <p>
+            A clean lineup designed for engineers and buyers: clear categories, clear load classes, and customization options.
+          </p>
+        </div>
+
+        <div class="grid cards reveal">
+          <article class="card">
+            <div class="card-top">
+              <div class="icon" aria-hidden="true"></div>
+              <h3>Round Manhole Covers</h3>
+            </div>
+            <p>Stable seating for road and utility access with optional silent / anti-noise systems.</p>
+            <ul class="list">
+              <li>Typical: B125, C250, D400</li>
+              <li>Logo & branding options</li>
+              <li>Multiple frame depths</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <div class="icon" aria-hidden="true"></div>
+              <h3>Square & Rectangular</h3>
+            </div>
+            <p>Telecom, electrical, and chamber access formats engineered for fit and service.</p>
+            <ul class="list">
+              <li>Anti-slip surfaces</li>
+              <li>Custom dimensions</li>
+              <li>Fast RFQ turnaround</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <div class="icon" aria-hidden="true"></div>
+              <h3>Drainage Gratings</h3>
+            </div>
+            <p>Gratings and drainage solutions built for water flow, safety, and long service life.</p>
+            <ul class="list">
+              <li>High open area designs</li>
+              <li>Corrosion-resistant options</li>
+              <li>Standard + custom sizes</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <div class="icon" aria-hidden="true"></div>
+              <h3>Custom Engineering</h3>
+            </div>
+            <p>Send your BOQ/spec and we propose the right load class, size, and finish.</p>
+            <ul class="list">
+              <li>Datasheets & drawings</li>
+              <li>OEM/ODM services</li>
+              <li>Sampling support</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality -->
+    <section class="section section-alt" id="quality">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Quality & compliance</h2>
+          <p>
+            Infrastructure buyers need trust. We keep it simple: standards-first selection, documented checks, and consistent output.
+          </p>
+        </div>
+
+        <div class="grid two reveal">
+          <div class="panel">
+            <h3>Load class guidance</h3>
+            <p class="muted">
+              Tell us where the cover will be installed and the expected traffic. We’ll match the correct EN 124 load class
+              and propose suitable product configurations.
+            </p>
+            <div class="pill-row" aria-label="Load classes">
+              <span class="pill">A15</span>
+              <span class="pill">B125</span>
+              <span class="pill">C250</span>
+              <span class="pill">D400</span>
+              <span class="pill">E600</span>
+              <span class="pill">F900</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Deliverables for buyers</h3>
+            <ul class="list big">
+              <li>Datasheets (dimensions, load class, finish)</li>
+              <li>Optional drawings (PDF / CAD-ready)</li>
+              <li>Export documentation support</li>
+              <li>Packaging and shipping preparation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Projects</h2>
+          <p>
+            This section becomes “wow” when you add real photos. For now, we’ll keep premium placeholders ready to replace.
+          </p>
+        </div>
+
+        <div class="grid three reveal">
+          <div class="case">
+            <div class="case-img"></div>
+            <div class="case-body">
+              <div class="case-title">Municipal roadway upgrade</div>
+              <div class="case-meta">Load class: D400 • Silent seating option</div>
+            </div>
+          </div>
+
+          <div class="case">
+            <div class="case-img"></div>
+            <div class="case-body">
+              <div class="case-title">Utility access network</div>
+              <div class="case-meta">Square frames • Custom logo branding</div>
+            </div>
+          </div>
+
+          <div class="case">
+            <div class="case-img"></div>
+            <div class="case-body">
+              <div class="case-title">Drainage improvement</div>
+              <div class="case-meta">Gratings • Corrosion-resistant option</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Factory -->
+    <section class="section section-alt" id="factory">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Factory & manufacturing</h2>
+          <p>
+            People buy what they can verify. This section is designed to look premium with real factory photos later.
+          </p>
+        </div>
+
+        <div class="grid two reveal">
+          <div class="panel">
+            <h3>Manufacturing focus</h3>
+            <ul class="list big">
+              <li>Consistent seating and stable tolerances</li>
+              <li>Durable surfaces designed for safety</li>
+              <li>Customization for branding and specs</li>
+              <li>Export packaging and logistics preparation</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h3>Capabilities</h3>
+            <div class="stats">
+              <div class="stat">
+                <div class="stat-num">OEM</div>
+                <div class="stat-label">Private label / logo</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">RFQ</div>
+                <div class="stat-label">Fast quotation</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">CAD</div>
+                <div class="stat-label">Drawings support</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">Export</div>
+                <div class="stat-label">Docs ready</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="section" id="quote">
+      <div class="container">
+        <div class="cta reveal">
+          <div class="cta-content">
+            <h2>Request a quote</h2>
+            <p>
+              GitHub Pages is static, so for now we use a smart email RFQ button.
+              Later we can connect a free form service (still free).
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="btn btn-primary" id="mailtoBtn" href="#">Email RFQ</a>
+            <a class="btn btn-secondary" href="#contact">Contact details</a>
+          </div>
+        </div>
+
+        <div class="grid two reveal" id="contact">
+          <div class="panel">
+            <h3>Contact</h3>
+            <p class="muted">We’ll replace these with your real info in a later step.</p>
+
+            <div class="contact-list">
+              <div><span>Sales Email</span><strong>sales@solidoglobal.com</strong></div>
+              <div><span>Phone / WhatsApp</span><strong>+212 6XX XX XX XX</strong></div>
+              <div><span>Location</span><strong>Morocco • Export worldwide</strong></div>
+            </div>
+
+            <p class="tiny muted">
+              Tip: If you want, we can add Arabic/French toggle later too.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3>What to include in your RFQ</h3>
+            <ul class="list big">
+              <li>Installation area (road/sidewalk/industrial)</li>
+              <li>Load class (A15–F900)</li>
+              <li>Product type (round/square/rectangular/grating)</li>
+              <li>Size / frame depth</li>
+              <li>Quantity + delivery country/city</li>
+              <li>Branding/logo requirements</li>
+              <li>Required delivery date</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand mini">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text"><strong>Solido</strong><span>Global</span></span>
+        </div>
+        <div class="tiny muted">© <span id="year"></span> Solido Global. All rights reserved.</div>
+      </div>
+
+      <div class="footer-right tiny">
+        <a href="#products">Products</a>
+        <a href="#quality">Quality</a>
+        <a href="#projects">Projects</a>
+        <a href="#quote">Quote</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
 
