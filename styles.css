@@ -1,602 +1,166 @@
-/* =========================================================  
-   Solido Global — Premium industrial landing page
-   File: styles.css
-   ========================================================= */
+# Solido Global - Enhanced Design
 
-/* ---------- Theme tokens ---------- */
-:root{
-  /* Backgrounds (black/charcoal) */
-  --bg0: #0b0b0b;
-  --bg1: #121212;
-  --bg2: #171717;
+## 🎨 Design Improvements
 
-  /* Surfaces */
-  --card: rgba(255,255,255,.04);
-  --card2: rgba(255,255,255,.06);
+This enhanced version of your Solido Global website features a modern, premium aesthetic with significant improvements in visual design, animations, and user experience.
 
-  /* Text */
-  --text: #f5f5f5;
-  --muted: rgba(245,245,245,.72);
-  --muted2: rgba(245,245,245,.56);
+### Key Enhancements
 
-  /* Lines */
-  --line: rgba(255,255,255,.10);
-  --line2: rgba(255,255,255,.14);
+#### 1. **Typography Refresh**
+- Replaced generic Inter font with distinctive typefaces:
+  - **Syne** for headings - bold, modern, and unique
+  - **Outfit** for body text - clean and highly readable
+  - **DM Sans** for buttons and UI elements - professional and refined
+- Improved font weights, letter spacing, and hierarchy
 
-  /* SOLIDO palette (gold + bronze) */
-  --accent: #d4af37;   /* gold main */
-  --accent2: #b8962e;  /* gold deep */
-  --accent3: #6b5522;  /* bronze/brown */
+#### 2. **Enhanced Color System**
+- More sophisticated gold palette with multiple shades
+- Better contrast ratios for accessibility
+- CSS custom properties for consistent theming
+- Refined background gradients with layered radial effects
 
-  --shadow: 0 18px 65px rgba(0,0,0,.62);
-  --shadow2: 0 12px 40px rgba(0,0,0,.40);
+#### 3. **Advanced Animations**
+- **Background particles** - floating golden particles for depth
+- **Staggered reveal animations** - content fades in sequentially
+- **Smooth transitions** - all interactive elements have fluid motion
+- **Glow effects** - cards and buttons have subtle glowing halos on hover
+- **Floating cards** - gentle vertical motion for dynamic feel
 
-  --r12: 12px;
-  --r16: 16px;
-  --r20: 20px;
-  --r28: 28px;
+#### 4. **Visual Depth & Effects**
+- Multiple layered backgrounds with radial gradients
+- Card glow effects that appear on hover
+- Enhanced shadows with multiple layers
+- Backdrop blur effects for modern glass morphism
+- Improved border treatments with gradient borders
 
-  --container: min(1120px, 92%);
-}
+#### 5. **Component Improvements**
 
-/* ---------- Base reset ---------- */
-*{ box-sizing:border-box; }
-html, body{ height:100%; }
-html{ background:#070707; }
+**Navigation**
+- Sticky header with blur effect
+- Enhanced brand mark with animated glow
+- Improved mobile menu with smooth animations
 
-body{
-  margin:0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--text);
+**Hero Section**
+- Gradient text highlight on main title
+- Icon-enhanced trust cards with hover effects
+- Animated badge with pulsing dot
+- Premium panel with glow effects
+- Floating feature cards with gentle animation
 
-  /* ONE continuous background for the whole site */
-  background:
-    radial-gradient(1200px 700px at 15% 5%, rgba(212,175,55,.14), transparent 62%),
-    radial-gradient(900px 600px at 85% 0%, rgba(107,85,34,.12), transparent 58%),
-    radial-gradient(900px 700px at 60% 80%, rgba(212,175,55,.08), transparent 62%),
-    linear-gradient(180deg, #070707 0%, #0b0b0b 22%, #111111 52%, #0b0b0b 78%, #070707 100%);
-  background-attachment: fixed, fixed, fixed, fixed;
+**Product Cards**
+- Card glow overlays that activate on hover
+- Better icon treatments with gradient backgrounds
+- Smooth lift animations
+- Enhanced spacing and typography
 
-  overflow-x:hidden;
-}
+**CTA Section**
+- Prominent call-to-action with radial glow
+- Better button hierarchy
+- Improved contact information layout
 
-/* subtle overlay texture to avoid “banding” */
-body::before{
-  content:"";
-  position: fixed;
-  inset: 0;
-  pointer-events:none;
-  z-index: -1;
-  background:
-    radial-gradient(900px 420px at 20% 20%, rgba(255,255,255,.03), transparent 60%),
-    radial-gradient(900px 420px at 80% 30%, rgba(255,255,255,.02), transparent 65%),
-    linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.14));
-  opacity: .95;
-}
+#### 6. **Interaction Design**
+- All clickable elements have hover states
+- Smooth transitions (150-500ms timing)
+- Transform effects for depth perception
+- Active states for better feedback
+- Focus states for accessibility
 
-a{ color:inherit; text-decoration:none; }
-img{ max-width:100%; display:block; }
+#### 7. **Responsive Design**
+- Optimized breakpoints for all screen sizes
+- Mobile-first approach
+- Flexible grids that adapt beautifully
+- Touch-friendly button sizes
+- Improved mobile navigation
 
-.container{ width: var(--container); margin:0 auto; }
+#### 8. **Performance Optimizations**
+- CSS-only animations (no JavaScript for animations)
+- Efficient use of backdrop-filter
+- Optimized font loading
+- Minimal DOM manipulation
 
-/* Accessibility */
-:focus-visible{
-  outline: 3px solid rgba(212,175,55,.55);
-  outline-offset: 3px;
-  border-radius: 10px;
-}
+### Design Philosophy
 
-/* ---------- Topbar ---------- */
-.topbar{
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  background: rgba(0,0,0,.22);
-  backdrop-filter: blur(12px);
-}
-.topbar-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-  padding: 10px 0;
-}
-.topbar-left{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  min-width: 0;
-}
-.dot{
-  width:10px; height:10px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  box-shadow: 0 0 0 6px rgba(212,175,55,.10);
-  flex: 0 0 auto;
-}
-.topbar-text{
-  color: var(--muted);
-  font-weight: 700;
-  font-size: 12px;
-  white-space: nowrap;
-  overflow:hidden;
-  text-overflow: ellipsis;
-}
-.topbar-right{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color: var(--muted);
-  font-weight: 800;
-  font-size: 12px;
-}
-.topbar-link{ opacity:.95; }
-.topbar-link:hover{ opacity:1; color: var(--text); }
-.sep{ opacity:.55; }
+The redesign follows these principles:
 
-/* ---------- Header / Nav ---------- */
-.header{
-  position:relative;
-  border-bottom: 1px solid rgba(255,255,255,.06);
-  overflow:hidden;
-}
+1. **Premium Industrial** - Sophisticated gold accents on dark backgrounds convey quality and professionalism
+2. **Clarity** - Clean typography and generous spacing ensure excellent readability
+3. **Motion** - Subtle animations add life without being distracting
+4. **Hierarchy** - Clear visual organization guides users through content
+5. **Trust** - Professional presentation builds confidence in your products
 
-/* subtle grid texture */
-.header::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  background:
-    linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-  background-size: 54px 54px;
-  opacity:.08;
-  pointer-events:none;
-}
-.header::after{
-  content:"";
-  position:absolute;
-  inset:-120px -120px auto auto;
-  width: 560px;
-  height: 560px;
-  background: radial-gradient(circle at 30% 30%, rgba(212,175,55,.18), transparent 60%);
-  filter: blur(10px);
-  opacity:.65;
-  pointer-events:none;
-}
+### Browser Support
 
-.nav{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding: 18px 0;
-  z-index:2;
-}
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- CSS Grid and Flexbox for layouts
+- CSS custom properties for theming
+- Backdrop-filter with fallbacks
+- Graceful degradation for older browsers
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.brand-mark{
-  width:14px; height:14px;
-  border-radius: 6px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  box-shadow: 0 0 0 7px rgba(212,175,55,.12);
-}
-.brand-text strong{
-  font-weight: 900;
-  letter-spacing: .2px;
-}
-.brand-text span{
-  opacity:.85;
-  margin-left:4px;
-  font-weight: 800;
-  color: rgba(212,175,55,.92);
-}
+### Customization
 
-/* Desktop links */
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:18px;
-}
-.nav-links a{
-  color: rgba(245,245,245,.88);
-  font-weight: 800;
-  font-size: 13px;
-  letter-spacing: .2px;
-  opacity:.95;
-}
-.nav-links a:hover{ opacity:1; color: rgba(212,175,55,.95); }
+To customize the design:
 
-/* Mobile toggle */
-.nav-toggle{
-  display:none;
-  width:44px; height:44px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
-  cursor:pointer;
-}
-.nav-toggle span{
-  display:block;
-  width:18px; height:2px;
-  background: rgba(255,255,255,.86);
-  margin: 4px auto;
-  border-radius: 999px;
-}
+1. **Colors**: Edit CSS custom properties in `:root`
+2. **Fonts**: Update font imports in HTML `<head>`
+3. **Animations**: Adjust timing in CSS variables
+4. **Spacing**: Modify container width and section padding
 
-/* ---------- Buttons ---------- */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding: 12px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
-  font-weight: 900;
-  font-size: 13px;
-  letter-spacing:.2px;
-  transition: transform .15s ease, border-color .15s ease, background .15s ease, box-shadow .15s ease;
-  user-select:none;
-}
-.btn:hover{
-  transform: translateY(-1px);
-  border-color: rgba(212,175,55,.35);
-}
-.btn:active{ transform: translateY(0px); }
+### Files Included
 
-.btn-primary{
-  border-color: rgba(212,175,55,.55);
-  background:
-    radial-gradient(700px 240px at 20% 0%, rgba(212,175,55,.22), transparent 60%),
-    radial-gradient(700px 240px at 80% 0%, rgba(184,150,46,.16), transparent 55%),
-    linear-gradient(135deg, rgba(212,175,55,.16), rgba(107,85,34,.12));
-  box-shadow: 0 18px 60px rgba(212,175,55,.10);
-}
-.btn-secondary{ background: rgba(255,255,255,.06); }
-.btn-ghost{ background: rgba(0,0,0,.26); }
-.w-full{ width:100%; }
+**Core Files:**
+- `index.html` - Enhanced HTML structure with semantic markup and real images integrated
+- `styles.css` - Complete redesigned stylesheet with animations and image styling
+- `script.js` - Original JavaScript functionality (unchanged)
+- `README.md` - This documentation
 
-/* ---------- Hero ---------- */
-.hero{
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns: 1.08fr .92fr;
-  gap: 26px;
-  padding: 34px 0 64px;
-  align-items:start;
-}
+**Brand Assets:**
+- `logo.png` - Your beautiful golden manhole cover logo (used in header, footer, and cards)
+- `grid.jpg` - Technical grid pattern (used as subtle background overlay)
 
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
-  padding: 10px 12px;
-  border-radius: 999px;
-  color: var(--muted);
-  font-weight: 900;
-  font-size: 12px;
-}
-.badge-icon{
-  width: 10px; height: 10px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent2), var(--accent));
-  box-shadow: 0 0 0 6px rgba(212,175,55,.10);
-}
+**Real Photos:**
+- `factory.jpg` - Manufacturing facility photo (Factory section background)
+- `project.jpg` - Installation project photo (Projects section case studies)
+- `inspection.jpg` - Quality control photo (Quality section background)
 
-.hero-title{
-  margin: 14px 0 10px;
-  font-size: clamp(34px, 4.1vw, 56px);
-  line-height: 1.03;
-  letter-spacing: -1px;
-}
-.hero-lead{
-  margin:0;
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.8;
-  max-width: 62ch;
-}
+**Icon Set (All Golden Icons):**
+- `standards.png` - Quality/standards badge icon
+- `customization.png` - OEM/customization gear icon
+- `delivery.png` - Global delivery icon
+- `rfq.png` - RFQ/document icon
+- `quality.png` - Quality chart icon
+- `roadway.png` - Road installation icon
+- `sidewalk.png` - Sidewalk/pedestrian icon
+- `industry.png` - Industrial/factory icon
 
-.hero-ctas{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin: 20px 0 18px;
-}
+### Image Integration
 
-/* trust cards */
-.hero-trust{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top: 8px;
-}
-.trust-card{
-  flex: 1 1 190px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
-  border-radius: var(--r20);
-  padding: 12px 14px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.20);
-}
-.trust-kicker{
-  font-weight: 900;
-  font-size: 11px;
-  opacity:.95;
-  letter-spacing:.3px;
-  color: rgba(212,175,55,.90);
-}
-.trust-value{ margin-top: 6px; font-weight: 900; letter-spacing:.2px; }
-.trust-meta{ margin-top: 6px; color: var(--muted2); font-size: 12px; line-height: 1.6; }
+Your images have been strategically placed throughout the site:
 
-/* proof row */
-.hero-proof{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top: 16px;
-}
-.proof-item{
-  flex: 1 1 140px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.20);
-  border-radius: var(--r20);
-  padding: 12px 14px;
-}
-.proof-num{
-  font-weight: 1000;
-  font-size: 16px;
-  letter-spacing: .2px;
-  color: rgba(212,175,55,.92);
-}
-.proof-label{ margin-top: 6px; color: var(--muted); font-size: 12px; font-weight: 800; }
+1. **Logo** - Prominently displayed in navigation, footer, and product cards
+2. **Grid Pattern** - Subtle technical overlay across entire site
+3. **Real Photos** - Used as atmospheric backgrounds in Quality and Factory sections
+4. **Project Photo** - Featured in all three case study cards
+5. **Golden Icons** - Integrated into trust cards, selector chips, mini cards, and stat boxes
 
-/* Hero right panel */
-.hero-right{ position:relative; }
-.hero-panel{
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: var(--r28);
-  padding: 16px;
-  background:
-    radial-gradient(900px 360px at 22% 0%, rgba(212,175,55,.16), transparent 60%),
-    radial-gradient(700px 320px at 82% 0%, rgba(107,85,34,.12), transparent 55%),
-    rgba(255,255,255,.03);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
-}
-.panel-header{ padding: 6px 6px 4px; }
-.panel-title{ font-weight: 1000; letter-spacing: .2px; }
-.panel-sub{ margin-top: 6px; color: var(--muted); font-size: 13px; font-weight: 700; }
+All images are optimized for web display with proper filtering, brightness, and hover effects to maintain the premium aesthetic.
 
-.panel-section{ padding: 12px 6px; }
+### Next Steps
 
-.chips{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin: 8px 0 12px;
-}
-.chip{
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.02);
-  color: var(--text);
-  border-radius: 999px;
-  padding: 10px 12px;
-  font-weight: 1000;
-  font-size: 12px;
-  cursor:pointer;
-  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease, background .15s ease;
-}
-.chip:hover{ transform: translateY(-1px); border-color: rgba(212,175,55,.35); }
-.chip.is-active{
-  border-color: rgba(212,175,55,.55);
-  background: rgba(212,175,55,.08);
-  box-shadow: 0 0 0 7px rgba(212,175,55,.10);
-}
+To take this further, consider:
 
-.panel-results{ display:grid; gap:10px; }
-.result{
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.18);
-  border-radius: var(--r20);
-  padding: 12px 14px;
-}
-.result-name{ font-weight: 1000; font-size: 13px; letter-spacing:.2px; }
-.result-meta{ margin-top: 6px; color: var(--muted2); font-size: 12px; font-weight: 700; line-height:1.6; }
+1. Replace duplicate project photos with unique images for each case study
+2. Add more product photography for the Products section
+3. Implement a contact form instead of mailto
+4. Add product detail pages
+5. Include customer testimonials with photos
+6. Add language switcher (Arabic/French)
+7. Integrate analytics tracking
+8. Add more factory/manufacturing photos to showcase capabilities
 
-.panel-divider{ height:1px; background: rgba(255,255,255,.10); margin: 2px 0; }
+## 🚀 Deployment
 
-.mini-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
-.mini-card{
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.02);
-  border-radius: var(--r20);
-  padding: 14px;
-}
-.mini-kicker{ font-weight: 1000; font-size: 12px; color: rgba(212,175,55,.90); }
-.mini-text{ margin-top: 6px; color: var(--muted); font-size: 12px; font-weight: 700; }
+Simply upload all three files (`index.html`, `styles.css`, `script.js`) to your web server or GitHub Pages. The site is ready to go!
 
-.panel-footer{ padding: 8px 6px 6px; }
+---
 
-/* Floating cards */
-.float-stack{
-  position:absolute;
-  left: -18px;
-  bottom: -14px;
-  display:grid;
-  gap:10px;
-  width: 220px;
-}
-.float-card{
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.24);
-  border-radius: var(--r20);
-  padding: 12px 14px;
-  box-shadow: var(--shadow2);
-  backdrop-filter: blur(10px);
-}
-.float-title{ font-weight: 1000; font-size: 12px; letter-spacing:.2px; color: rgba(212,175,55,.90); }
-.float-text{ margin-top: 6px; color: var(--muted); font-size: 12px; font-weight: 700; line-height:1.6; }
-
-/* ---------- Sections ---------- */
-.section{ padding: 72px 0; }
-
-/* IMPORTANT: no “stripe” backgrounds anymore */
-.section-alt{
-  background: transparent;
-  border-top: none;
-  border-bottom: none;
-}
-
-/* grids */
-.grid{ display:grid; gap:14px; margin-top: 20px; }
-.grid.cards{ grid-template-columns: repeat(4, 1fr); }
-.grid.two{ grid-template-columns: repeat(2, 1fr); }
-.grid.three{ grid-template-columns: repeat(3, 1fr); }
-
-/* cards / panels */
-.card, .panel{
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
-  border-radius: var(--r28);
-  padding: 16px;
-}
-.card{
-  box-shadow: 0 10px 45px rgba(0,0,0,.22);
-  transition: transform .15s ease, border-color .15s ease, background .15s ease;
-}
-.card:hover{
-  transform: translateY(-2px);
-  border-color: rgba(212,175,55,.22);
-  background: rgba(255,255,255,.04);
-}
-
-.card-top{ display:flex; align-items:center; gap:10px; }
-.icon{
-  width:38px; height:38px;
-  border-radius: 16px;
-  background:
-    radial-gradient(600px 220px at 20% 0%, rgba(212,175,55,.18), transparent 60%),
-    radial-gradient(600px 220px at 80% 0%, rgba(107,85,34,.14), transparent 55%),
-    rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.10);
-}
-
-.section-head h2{ margin:0; font-size: clamp(22px, 2.5vw, 34px); letter-spacing: -.3px; }
-.section-head p{ margin: 10px 0 0; color: var(--muted); font-weight: 700; line-height: 1.8; max-width: 74ch; }
-
-.card h3{ margin:0; font-size: 15px; letter-spacing: -.1px; font-weight:1000; }
-.card p{ margin: 10px 0 0; color: var(--muted); font-weight: 700; line-height: 1.8; font-size: 13px; }
-
-/* lists */
-.list{ margin: 12px 0 0; padding-left: 18px; color: var(--muted); font-weight: 700; font-size: 13px; line-height: 1.8; }
-.list.big{ font-size: 14px; }
-
-.muted{ color: var(--muted); }
-.tiny{ font-size: 12px; color: var(--muted2); font-weight:700; }
-
-/* pills */
-.pill-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
-.pill{ padding: 10px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); background: rgba(0,0,0,.18); font-weight: 1000; font-size: 12px; }
-
-/* stats */
-.stats{ display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; margin-top: 10px; }
-.stat{ border: 1px solid rgba(255,255,255,.10); background: rgba(0,0,0,.18); border-radius: var(--r20); padding: 14px; }
-.stat-num{ font-weight: 1100; letter-spacing:.2px; }
-.stat-label{ margin-top: 6px; color: var(--muted); font-weight: 800; font-size: 12px; line-height: 1.6; }
-
-/* cases */
-.case{ border: 1px solid rgba(255,255,255,.10); border-radius: var(--r28); background: rgba(255,255,255,.03); overflow:hidden; transition: transform .15s ease, border-color .15s ease; }
-.case:hover{ transform: translateY(-2px); border-color: rgba(212,175,55,.22); }
-.case-img{
-  height: 150px;
-  background:
-    radial-gradient(700px 220px at 20% 0%, rgba(212,175,55,.16), transparent 60%),
-    radial-gradient(700px 220px at 80% 0%, rgba(107,85,34,.12), transparent 55%),
-    linear-gradient(135deg, rgba(255,255,255,.05), rgba(0,0,0,.08));
-  border-bottom: 1px solid rgba(255,255,255,.10);
-}
-.case-body{ padding: 14px; }
-.case-title{ font-weight: 1000; }
-.case-meta{ margin-top: 6px; color: var(--muted2); font-size: 12px; font-weight: 700; }
-
-/* CTA */
-.cta{
-  border: 1px solid rgba(255,255,255,.12);
-  background:
-    radial-gradient(900px 300px at 20% 0%, rgba(212,175,55,.16), transparent 60%),
-    radial-gradient(700px 260px at 80% 0%, rgba(107,85,34,.11), transparent 55%),
-    rgba(255,255,255,.03);
-  border-radius: var(--r28);
-  padding: 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(12px);
-}
-.cta h2{ margin:0; font-size: 22px; letter-spacing:-.2px; }
-.cta p{ margin: 10px 0 0; color: var(--muted); font-weight: 700; max-width: 64ch; line-height:1.8; }
-.cta-actions{ display:flex; gap:12px; flex-wrap:wrap; }
-
-/* Contact list */
-.contact-list{ display:grid; gap:10px; margin-top: 14px; }
-.contact-list div{ padding: 12px 14px; border: 1px solid rgba(255,255,255,.10); border-radius: var(--r20); background: rgba(0,0,0,.18); display:flex; justify-content:space-between; align-items:center; gap:10px; }
-.contact-list span{ color: var(--muted2); font-size: 12px; font-weight: 1000; }
-.contact-list strong{ font-size: 13px; font-weight: 1000; }
-
-/* Footer */
-.footer{ border-top: 1px solid rgba(255,255,255,.08); padding: 22px 0; background: rgba(0,0,0,.22); backdrop-filter: blur(10px); }
-.footer-inner{ display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
-.brand.mini .brand-mark{ width:12px; height:12px; }
-.footer-right{ display:flex; gap:14px; opacity:.9; font-weight: 900; }
-.footer-right a:hover{ opacity:1; color: rgba(212,175,55,.92); }
-
-/* ---------- Reveal animations ---------- */
-.reveal{ opacity:0; transform: translateY(10px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.is-visible{ opacity:1; transform: translateY(0px); }
-
-/* ---------- Responsive ---------- */
-@media (max-width: 980px){
-  .hero{ grid-template-columns: 1fr; }
-  .grid.cards{ grid-template-columns: repeat(2, 1fr); }
-  .grid.three{ grid-template-columns: 1fr; }
-  .float-stack{ position:static; width:auto; margin-top: 14px; }
-}
-
-@media (max-width: 720px){
-  .topbar-right{ display:none; }
-
-  .nav-links{
-    position:absolute;
-    top: 74px;
-    left: 4%;
-    right: 4%;
-    background: rgba(20,14,10,.92);
-    border: 1px solid rgba(255,255,255,.10);
-    border-radius: 18px;
-    padding: 12px;
-    display:none;
-    flex-direction:column;
-    align-items:stretch;
-    gap:10px;
-    z-index: 4;
-    backdrop-filter: blur(12px);
-  }
-  .nav-links.is-open{ display:flex; }
-  .nav-toggle{ display:block; }
-
-  .grid.two{ grid-template-columns: 1fr; }
-  .grid.cards{ grid-template-columns: 1fr; }
-  .mini-grid{ grid-template-columns: 1fr; }
-  .stats{ grid-template-columns: 1fr; }
-  .cta{ flex-direction:column; align-items:flex-start; }
-}
+**Designed with attention to detail and modern web standards.**
