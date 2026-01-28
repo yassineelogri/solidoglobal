@@ -163,4 +163,3 @@ Phone/WhatsApp:
 if (mailtoBtn) {
   mailtoBtn.setAttribute("href", buildRFQMailto());
 }
-
